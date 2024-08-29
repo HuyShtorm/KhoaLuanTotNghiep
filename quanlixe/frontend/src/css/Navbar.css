@@ -1,0 +1,38 @@
+.navbar {
+   width: 100;
+    padding: 10px;
+    display: flex;
+    align-items: center; 
+  }
+  
+  .navbar-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Tạo hình tròn */
+    margin-right: 100px; /* Tạo khoảng cách giữa logo và các liên kết */
+  }
+  .navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Đẩy các liên kết sang bên phải */
+    flex-grow: 1; /* Đẩy các liên kết sang bên phải */
+  }
+  
+  .navbar-item {
+    margin-left: 20px;
+  }
+  
+  .navbar-item a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+  }
+  
+  .navbar-item a:hover {
+    background-color: #555;
+    border-radius: 4px;
+  }
+  

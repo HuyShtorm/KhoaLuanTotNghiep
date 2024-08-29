@@ -8,8 +8,8 @@ const Home = () => {
     <div>
       <img src={backgroundImage} className="App-background-image" alt="background" />
       <div className="App-content">
-        <button className="buttondn">Đăng nhập</button>
-        <p className='cctk'>Chưa có Tài khoản? <Link to="/register" className='dk'>Đăng ký</Link> </p> 
+        {/* <button className="buttondn">Đăng nhập</button>
+        <p className='cctk'>Chưa có Tài khoản? <Link to="/register" className='dk'>Đăng ký</Link> </p>  */}
         
       </div>
     </div>

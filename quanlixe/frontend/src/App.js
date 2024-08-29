@@ -5,26 +5,28 @@ import Home from './view/Home';
 import RegisterForm from './view/Register';
 import backgroundImage from './img/anhnentrangchu.jpg';
 import './css/App.css';
-
+import Navbar from './view/Navbar';
+import Footer from './view/Footer';
+import LogForm from './view/Log';
 function App() {
   return (
     <Router>
       <div className="App">
         <header className="App-header">
-          <h1>Quản Lý xe chung cư HuyShtorm</h1>
+       <h1><Navbar /></h1> 
         </header>
         <main className="App-main">
           <img src={backgroundImage} className="App-background-image" alt="background" />
-          
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<RegisterForm />} />
+            <Route path="/logs" element={<LogForm />} />
           </Routes>
+        
         </main>
-        <footer className="App-footer">
-          <p>&copy; 2024 Your Company. All rights reserved.</p>
-        </footer>
+   <footer> <Footer/></footer>
       </div>
+      
     </Router>
   );
 }

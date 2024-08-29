@@ -1,0 +1,131 @@
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-section {
+    flex: 1;
+    padding: 10px;
+    
+
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #f1f1f1;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-section ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-icons {
+    /*display: flex;   *//* Hiển thị các icon mạng xã hội theo hàng ngang */
+    gap: 10px;
+    
+    
+  }
+  
+  .social-icons li {
+    list-style: none;
+   
+  }
+  
+  .social-icons li a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+ /* Footer.css */
+.social-icons li a.facebook-icon {
+    color: #3b5998;/* Màu Facebook */
+    text-decoration: none;
+   
+    transition: color 0.3s ease; 
+  }
+  
+  .social-icons li a.twitter-icon {
+    color: #1da1f2; /* Màu Twitter */
+  }
+  
+  .social-icons li a.linkedin-icon {
+    color: #0077b5; /* Màu LinkedIn */
+  }
+  
+  /* Hover effect for all icons */
+  .social-icons li a:hover {
+    opacity: 0.8;
+    color: #ffffff;
+  }
+  
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #aaa;
+  }
+  /* CSS cho danh sách ngang */
+.horizontal-list {
+    list-style-type: none; /* Bỏ dấu chấm trước mỗi mục */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Chuyển danh sách sang dạng hàng ngang */
+  }
+  
+  .horizontal-list li {
+    margin-right: 20px; /* Khoảng cách giữa các mục */
+  }
+  
+  .horizontal-list li:last-child {
+    margin-right: 0; /* Xóa khoảng cách phải cho mục cuối cùng */
+  }
+  
+  /* CSS cho danh sách dọc (mặc định) */
+.vertical-list {
+    list-style-type: disc; /* Hoặc sử dụng khác như circle, square */
+    padding-left: 20px; /* Khoảng cách từ bên trái */
+  }
+  
+  .vertical-list li {
+    margin-bottom: 10px; /* Khoảng cách giữa các mục */
+  }
+  
+  .vertical-list li:last-child {
+    margin-bottom: 0; /* Xóa khoảng cách dưới cùng cho mục cuối cùng */
+  }
+  
