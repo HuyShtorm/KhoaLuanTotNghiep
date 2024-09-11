@@ -1,0 +1,75 @@
+/* Navbar chứa các mục chức năng */
+.function-menu {
+    background-color: #bfceda; 
+    padding: 15px;
+    font-size: 18px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Căn giữa các mục trong navbar */
+    border-bottom: 2px solid #000000; /* Đường viền dưới */
+    box-shadow: 0 4px 8px rgba(111, 141, 197, 0.1); /* Tạo bóng cho navbar */
+}
+
+.function-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 300px; /* Khoảng cách giữa các nút */
+
+}
+
+.function-menu ul li {
+    display: inline-block;
+}
+
+.function-menu ul li:hover {
+    cursor: pointer; /* Con trỏ thay đổi thành dạng tay khi hover */
+}
+
+.function-menu ul li {
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px; /* Padding lớn hơn để nút trông dễ nhấn hơn */
+    background-color: #656ec0; /* Màu nền của nút */
+    border-radius: 8px; /* Bo góc mềm mại */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Hiệu ứng hover mượt */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tạo bóng nhẹ cho nút */
+    font-weight: 600; /* Tăng độ đậm của chữ */
+    letter-spacing: 0.5px; /* Khoảng cách giữa các chữ */
+}
+
+.function-menu ul li:hover {
+    background-color: #1abc9c; /* Màu nền khi hover */
+    transform: translateY(-2px); /* Hiệu ứng đẩy nút lên khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Tăng bóng khi hover */
+}
+
+.function-menu ul li:active {
+    background-color: #16a085; /* Màu khi nhấn */
+    transform: translateY(0); /* Trả lại vị trí ban đầu khi nhấn */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bóng trở về bình thường */
+}
+
+/* Phần nội dung của admin panel */
+.admin-content {
+    padding: 30px;
+    background-color: #f7f9f9; /* Nền sáng cho phần nội dung */
+    min-height: 500px; /* Chiều cao tối thiểu */
+    border-radius: 10px; /* Bo góc */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Tạo bóng cho khối nội dung */
+    margin-top: 20px;
+    /* font-family: 'Arial', sans-serif; Font chữ đẹp và phổ biến */
+}
+
+/* Tiêu đề của phần nội dung */
+.admin-content h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center; /* Căn giữa tiêu đề */
+    text-transform: uppercase; /* Viết hoa tiêu đề */
+    font-weight: 700;
+}
+
+
