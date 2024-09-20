@@ -4,7 +4,7 @@ import '../css/App.css';
 const LogForm = () => {
   return (
     <div>
-     <form className="form" autoComplete="off">
+     {/* <form className="form" autoComplete="off">
   <div className="control">
     <h1>Sign In</h1>
   </div>
@@ -54,8 +54,25 @@ const LogForm = () => {
     <a href="https://codepen.io/marko-zub/" target="_blank" rel="noopener noreferrer">
       My other codepens
     </a>
-  </div>
+  </div> */}
+
+<form className="dn">
+  <h2>Đăng Nhập</h2>
+  <label>
+    Email:
+    <input type="email" name="email" />
+  </label>
+  <label>
+    Mật khẩu:
+    <input type="password" name="password" />
+  </label>
+  <input type="submit" value="Đăng Nhập" />
 </form>
+
+
+
+{/* 
+</form> */}
 
     </div>
   );

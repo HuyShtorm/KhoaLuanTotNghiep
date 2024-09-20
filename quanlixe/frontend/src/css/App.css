@@ -59,43 +59,74 @@ html, body {
   margin: 4px 2px;
   cursor: pointer;
 }
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh;    Đặt chiều cao để căn giữa dọc */
+}
+
 .Register-form {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 8px;
-  width: 300px;
-  margin: 1rem auto;
-  text-align: left;
+  width: 320px;
+  margin: 2rem auto;
+  
+  /* Hiệu ứng nổi */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.Register-form:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.Register-form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
 .Register-form label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 16px;
+  color: #555;
 }
 
 .Register-form input {
   width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
+  padding: 0.7rem;
+  margin-bottom: 1.2rem;
+  font-size: 14px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.Register-form input:focus {
+  border-color: #3498db;
+  outline: none;
 }
 
 .Register-form button {
-  background-color: #282c34;
+  background-color: #3498db;
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  padding: 0.6rem 1.2rem;
+  font-size: 16px;
+  border-radius: 6px;
   cursor: pointer;
+  width: 100%; /* Đảm bảo nút rộng bằng 100% */
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .Register-form button:hover {
-  background-color: #61dafb;
+  background-color: #2980b9;
 }
-
-
 
 
 .buttondn:hover {
@@ -114,6 +145,77 @@ html, body {
 }
 *, ::after, ::before {
   box-sizing: border-box;
+}
+.dn {
+  /* Căn giữa form */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px auto;
+/* 
+  margin: 0 auto; */
+  padding: 20px;
+  width: 300px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.dn h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.dn label {
+  margin-bottom: 15px;
+  font-size: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #555;
+}
+
+.dn input {
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.dn input:focus {
+  border-color: #3498db;
+  outline: none;
+
+}
+
+.dn:hover {
+  /* Nổi lên thêm khi hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dn input:hover {
+  /* Đổi màu khi hover vào input */
+  border-color: #2980b9;
+}
+
+.dn input[type="submit"] {
+  margin-top: 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.dn input[type="submit"]:hover {
+  background-color: #2980b9;
 }
 
 /* body {
@@ -265,4 +367,59 @@ h1 {
 }
 .credits a:hover {
   opacity: 1;
+}
+/* CSS cho thông báo */
+.message-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.message-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 1000;
+}
+
+.message-box p {
+  margin-bottom: 15px;
+}
+
+.message-box button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
+.message-box.success {
+  border-color: #28a745;
+}
+
+.message-box.error {
+  border-color: #dc3545;
+}
+
+.message-box.success button {
+  background-color: #28a745;
+}
+
+.message-box.error {
+  background-color: #f8d7da;
 }
