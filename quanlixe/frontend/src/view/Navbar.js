@@ -14,9 +14,9 @@ function Navbar({ isUserPage, isAdminPage }) {
             <li className="navbar-item"><Link to="/parking">Parking Allocation</Link></li>
             <li className="navbar-item"><Link to="/residents">Resident Info</Link></li>
             <li className="navbar-item"><Link to="/register">Đăng ký</Link></li>    
-            <li className="navbar-item"><Link to="/logs">Đăng Nhập</Link></li>
-            <li className="navbar-item"><Link to="/user">User</Link></li>
-            <li className="navbar-item"><Link to="/admin">Admin</Link></li>
+            <li className="navbar-item"><Link to="/login">Đăng Nhập</Link></li>
+            {/* <li className="navbar-item"><Link to="/user">User</Link></li>
+            <li className="navbar-item"><Link to="/admin">Admin</Link></li> */}
           </>
         ) : isUserPage ? (
           <>

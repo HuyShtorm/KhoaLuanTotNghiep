@@ -6,6 +6,7 @@
     position: relative;
     bottom: 0;
     width: 100%;
+    height: 250px;
   }
   
   .footer-container {
@@ -92,6 +93,7 @@
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid #444;
+    background-color: #333;
   }
   
   .footer-bottom p {

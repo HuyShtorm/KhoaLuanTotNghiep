@@ -66,6 +66,12 @@ html, body {
   /* height: 100vh;    Đặt chiều cao để căn giữa dọc */
 }
 
+
+
+/*DANG KY */
+
+
+
 .Register-form {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
@@ -267,107 +273,7 @@ h1 {
   font-size: 16px;
 }
 
-.block-cube {
-  position: relative;
-}
-.block-cube .bg-top {
-  position: absolute;
-  height: 10px;
-  background: #020024;
-  background: linear-gradient(90deg, #020024 0%, #340979 37%, #00d4ff 94%);
-  bottom: 100%;
-  left: 5px;
-  right: -5px;
-  transform: skew(-45deg, 0);
-  margin: 0;
-}
-.block-cube .bg-top .bg-inner {
-  bottom: 0;
-}
-.block-cube .bg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background: #020024;
-  background: linear-gradient(90deg, #020024 0%, #340979 37%, #00d4ff 94%);
-}
-.block-cube .bg-right {
-  position: absolute;
-  background: #020024;
-  background: #00d4ff;
-  top: -5px;
-  z-index: 0;
-  bottom: 5px;
-  width: 10px;
-  left: 100%;
-  transform: skew(0, -45deg);
-}
-.block-cube .bg-right .bg-inner {
-  left: 0;
-}
-.block-cube .bg .bg-inner {
-  transition: all 0.2s ease-in-out;
-}
-.block-cube .bg-inner {
-  background: #212121;
-  position: absolute;
-  left: 2px;
-  top: 2px;
-  right: 2px;
-  bottom: 2px;
-}
-.block-cube .text {
-  position: relative;
-  z-index: 2;
-}
-.block-cube.block-input input {
-  position: relative;
-  z-index: 2;
-}
-.block-cube.block-input input:focus ~ .bg-right .bg-inner, .block-cube.block-input input:focus ~ .bg-top .bg-inner, .block-cube.block-input input:focus ~ .bg-inner .bg-inner {
-  top: 100%;
-  background: rgba(255, 255, 255, 0.5);
-}
-.block-cube.block-input .bg-top,
-.block-cube.block-input .bg-right,
-.block-cube.block-input .bg {
-  background: rgba(255, 255, 255, 0.5);
-  transition: background 0.2s ease-in-out;
-}
-.block-cube.block-input .bg-right .bg-inner,
-.block-cube.block-input .bg-top .bg-inner {
-  transition: all 0.2s ease-in-out;
-}
-.block-cube.block-input:focus .bg-top,
-.block-cube.block-input:focus .bg-right,
-.block-cube.block-input:focus .bg, .block-cube.block-input:hover .bg-top,
-.block-cube.block-input:hover .bg-right,
-.block-cube.block-input:hover .bg {
-  background: rgba(255, 255, 255, 0.8);
-}
-.block-cube.block-cube-hover:focus .bg .bg-inner, .block-cube.block-cube-hover:hover .bg .bg-inner {
-  top: 100%;
-}
 
-.credits {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  padding: 15px 15px;
-  width: 100%;
-  z-index: 111;
-}
-.credits a {
-  opacity: 0.6;
-  color: #fff;
-  font-size: 11px;
-  text-decoration: none;
-}
-.credits a:hover {
-  opacity: 1;
-}
 /* CSS cho thông báo */
 .message-overlay {
   position: fixed;
@@ -422,4 +328,130 @@ h1 {
 
 .message-box.error {
   background-color: #f8d7da;
+}
+
+
+
+.Otp-form {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f3fc; /* Màu nền dịu nhẹ, tinh tế */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+  width: 100%;
+  max-width: 500px; 
+  margin: 0 auto;
+}
+
+.Otp-form h2 {
+  text-align: center;
+  color: #4a4a4a;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  font-weight: bold; /* Tạo sự nổi bật cho tiêu đề */
+}
+
+.Otp-form label {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.Otp-form input {
+  padding: 12px;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Otp-form input:focus {
+  border-color: #7a5cfa; /* Màu tím nhạt khi focus */
+  box-shadow: 0 0 8px rgba(122, 92, 250, 0.3); /* Hiệu ứng sáng nhẹ khi focus */
+}
+
+.Otp-form button {
+  padding: 12px;
+  background-color: #7a5cfa; /* Màu tím pastel tinh tế */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 12px;
+}
+
+.Otp-form button:hover {
+  background-color: #6a4be0; /* Hiệu ứng đổi màu khi hover */
+  box-shadow: 0 4px 10px rgba(106, 75, 224, 0.3); /* Hiệu ứng bóng đổ khi hover */
+}
+
+.Otp-form button[disabled] {
+  background-color: #d9d9d9;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.Otp-form .resend-button {
+  background-color: transparent;
+  color: #7a5cfa;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  border: none;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.Otp-form .resend-button:hover {
+  color: #6a4be0; /* Màu tối hơn khi hover */
+}
+
+
+/* CSS cho message */
+.message-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.message-box {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 280px; /* Khung thông báo nhỏ hơn */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bóng đổ mềm */
+}
+
+.message-box p {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.message-box button {
+  padding: 8px 15px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.message-box button:hover {
+  background-color: #218838;
 }
