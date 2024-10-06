@@ -11,8 +11,8 @@ function Navbar({ isUserPage, isAdminPage }) {
         {!isUserPage && !isAdminPage ? (
           <>
             <li className="navbar-item"><Link to="/">Trang chủ</Link></li>
-            <li className="navbar-item"><Link to="/parking">Parking Allocation</Link></li>
-            <li className="navbar-item"><Link to="/residents">Resident Info</Link></li>
+            <li className="navbar-item"><Link to="/infor">Thông tin Giới thiệu</Link></li>
+    
             <li className="navbar-item"><Link to="/register">Đăng ký</Link></li>    
             <li className="navbar-item"><Link to="/login">Đăng Nhập</Link></li>
             {/* <li className="navbar-item"><Link to="/user">User</Link></li>

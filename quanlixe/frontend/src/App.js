@@ -9,11 +9,11 @@ import Footer from './view/Footer';
 import LogForm from './view/Login';
 import User from './view/User';
 import Admin from './view/Admin';
+import Infor from './view/Infor';
 import UserManagement from './view/ViewAdmin/UserManagement';
 import VehicleManagement from './view/ViewAdmin/VehicleManagement';
 import Statistics from './view/ViewAdmin/Statistics';
 import SystemConfig from './view/ViewAdmin/SystemConfig';
-
 function App() {
   const [isUserPage, setIsUserPage] = useState(false);
   const [isAdminPage, setIsAdminPage] = useState(false);
@@ -56,7 +56,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<RegisterForm />} />
-         
+         <Route path="/infor" element={<Infor />} />
 
           <Route path="/login" element={<LogForm />} />
           <Route path="/user" element={<User />} />
