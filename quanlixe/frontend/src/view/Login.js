@@ -1,11 +1,15 @@
+
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../css/App.css';
 import { useNavigate } from 'react-router-dom';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [message, setMessage] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -15,33 +19,49 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/api/auth/login', formData);
-      
+      const response = await axios.post('/api/auth/login', formData, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+      });
+    
       if (response.status === 200) {
-        // Lưu token và role vào localStorage
-        localStorage.setItem('jwtToken', response.data.token);
-        localStorage.setItem('userRole', response.data.role);
-        
-        setMessage('Đăng nhập thành công!');
-
-        // Điều hướng người dùng dựa trên vai trò
-        if (response.data.role === 'ROLE_ADMIN') {
-          navigate('/admin'); // Chuyển đến trang admin
-        } else {
-          navigate('/user');  // Chuyển đến trang user
+        localStorage.setItem('token', response.data.token);
+    
+        // Kiểm tra phản hồi từ API
+        console.log("Response from API:", response.data);
+  
+        const role = response.data.roles;
+        if (role.includes('ADMIN')) {
+          navigate('/admin');
+        } else if (role.includes('OWNER')) {
+          navigate('/owner');
+        } else if (role.includes('USER')) {
+          navigate('/user');
+        } else if (role.includes('MODERATOR')) {
+          navigate('/moderator');
         }
+        
+        else {
+          setMessage('Vai trò không hợp lệ!');
+        }
+        
       } else {
-        setMessage('Đăng nhập thất bại! Vui lòng thử lại.');
+        setMessage('Đăng nhập thất bại!');
       }
     } catch (error) {
-      // Kiểm tra lỗi trả về từ server
       if (error.response && error.response.status === 401) {
         setMessage('Tài khoản hoặc mật khẩu không chính xác.');
+      } else if (error.response && error.response.status === 500) {
+        setMessage('Lỗi máy chủ. Vui lòng thử lại sau.');
       } else {
         setMessage('Đã có lỗi xảy ra. Vui lòng thử lại sau.');
       }
     }
   };
+  
+  
 
   return (
     <form onSubmit={handleSubmit} className="dn">
@@ -51,9 +71,21 @@ const LoginForm = () => {
         <input type="email" name="email" value={formData.email} onChange={handleChange} required />
       </label>
       <label>
-        Mật khẩu:
-        <input type="password" name="password" value={formData.password} onChange={handleChange} required />
-      </label>
+  Mật khẩu:
+  <div className="password-field">
+    <input
+      type={showPassword ? 'text' : 'password'}
+      name="password"
+      value={formData.password}
+      onChange={handleChange}
+      className="password-input"
+    />
+    <span className="eye-icon" onClick={() => setShowPassword((prev) => !prev)}>
+      {showPassword ? <FaEyeSlash /> : <FaEye />}
+    </span>
+  </div>
+</label>
+
       <input type="submit" value="Đăng Nhập" className="buttondn" />
       <p>{message}</p>
     </form>

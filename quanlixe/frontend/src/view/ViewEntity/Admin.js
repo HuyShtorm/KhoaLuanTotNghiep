@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import UserManagement from './ViewAdmin/UserManagement';
-import VehicleManagement from './ViewAdmin/VehicleManagement';
-import Statistics from './ViewAdmin/Statistics';
-import SystemConfig from './ViewAdmin/SystemConfig';
-import '../css/Admin.css';
+import UserManagement from '../ViewAdmin/UserManagement';
+import VehicleManagement from '../ViewAdmin/VehicleManagement';
+import Statistics from '../ViewAdmin/Statistics';
+import SystemConfig from '../ViewAdmin/SystemConfig';
+
+
+import '../../css/Admin.css';
 
 function Admin() {
   // Sử dụng state để lưu trữ trang hiện tại

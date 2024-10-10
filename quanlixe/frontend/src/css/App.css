@@ -181,6 +181,7 @@ html, body {
   display: flex;
   flex-direction: column;
   color: #555;
+ 
 }
 
 .dn input {
@@ -469,6 +470,15 @@ h1 {
   position: absolute;
   right: 10px;
   top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  padding-bottom: 15px;
+}
+
+.dn .eye-icon{
+  position: absolute;
+  right: 10px;
+  top: 75%;
   transform: translateY(-50%);
   cursor: pointer;
   padding-bottom: 15px;
