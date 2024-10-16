@@ -70,12 +70,12 @@ const RegisterForm = () => {
     }
 
     // Kiểm tra mật khẩu
-    const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/;
+    const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/;
     if (!passwordPattern.test(password)) {
-      setMessage('Mật khẩu phải có ít nhất 8 ký tự, bao gồm 1 chữ in hoa và 1 ký tự đặc biệt.');
+      setMessage('Mật khẩu phải có ít nhất 8 ký tự, bao gồm 1 chữ in hoa, 1 ký tự đặc biệt và 1 chữ số.');
       return false;
     }
-
+    
     if (password !== confirmPassword) {
       setMessage('Mật khẩu và xác nhận mật khẩu không khớp.');
       return false;

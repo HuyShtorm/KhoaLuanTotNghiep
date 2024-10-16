@@ -59,6 +59,18 @@ html, body {
   margin: 4px 2px;
   cursor: pointer;
 }
+.buttongtotp{
+  background-color: #282c34;
+  border: none;
+  color: white;
+  padding: 15px 77px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 .form-container {
   display: flex;
   justify-content: center;
@@ -136,6 +148,9 @@ html, body {
 
 
 .buttondn:hover {
+  background-color: #61dafb;
+}
+.buttongtotp:hover {
   background-color: #61dafb;
 }
 .dk{
@@ -482,4 +497,12 @@ h1 {
   transform: translateY(-50%);
   cursor: pointer;
   padding-bottom: 15px;
+}
+
+.forgot-password-link {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 140px;
 }

@@ -11,8 +11,15 @@ const login = (email, password) => {
 const register = (name, password, email) => {
     return axios.post(API_URL + 'register', {name, password, email });
 };
-
+const resetPassword = (email, otp, newPassword) => {
+    return axios.post(API_URL + 'reset-password', {
+        email,
+        otp,           // OTP code mà người dùng đã nhận
+        password: newPassword // Mật khẩu mới
+    });
+};
 export default {
     login,
-    register
+    register,
+    resetPassword
 };
