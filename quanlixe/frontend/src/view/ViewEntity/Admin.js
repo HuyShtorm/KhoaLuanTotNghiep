@@ -1,50 +1,21 @@
-import React, { useState } from 'react';
-import UserManagement from '../ViewAdmin/UserManagement';
-import VehicleManagement from '../ViewAdmin/VehicleManagement';
-import Statistics from '../ViewAdmin/Statistics';
-import SystemConfig from '../ViewAdmin/SystemConfig';
+import React from 'react';
+import Sidebar from '../Sidebar'; // Import Sidebar
+import '/HocKiCuoi/KLTN/projectweb/quanlixe/frontend/src/css/Admin.css'; // Tùy chọn: import CSS riêng cho trang Admin
 
-
-import '../../css/Admin.css';
-
-function Admin() {
-  // Sử dụng state để lưu trữ trang hiện tại
-  const [selectedPage, setSelectedPage] = useState('user-management');
-
-  // Hàm để hiển thị nội dung tương ứng với mục được chọn
-  const renderContent = () => {
-    switch (selectedPage) {
-      case 'user-management':
-        return <UserManagement />;
-      case 'vehicle-management':
-        return <VehicleManagement />;
-      case 'statistics':
-        return <Statistics />;
-      case 'system-config':
-        return <SystemConfig />;
-      default:
-        return <UserManagement />;
-    }
-  };
-
+const Admin = () => {
   return (
-    <div>
-      {/* Navbar chính */}
-      <nav className="function-menu">
-        <ul >
-          <li onClick={() => setSelectedPage('user-management')}>Quản lý người dùng</li>
-          <li onClick={() => setSelectedPage('vehicle-management')}>Quản lý xe</li>
-          <li onClick={() => setSelectedPage('statistics')}>Thống kê và báo cáo</li>
-          <li onClick={() => setSelectedPage('system-config')}>Cấu hình hệ thống</li>
-        </ul>
-      </nav>
+    <div className="admin-layout">
+      {/* Phần Sidebar */}
+      <Sidebar role="ADMIN" /> 
 
-      {/* Nội dung hiển thị tương ứng */}
+      {/* Phần nội dung Admin */}
       <div className="admin-content">
-        {renderContent()}
+        <h1>Quản lý admin</h1>
+        <p>Nội dung quản lý dành cho admin sẽ hiển thị ở đây.</p>
+        {/* Thêm các nội dung hoặc component liên quan đến Admin tại đây */}
       </div>
     </div>
   );
-}
+};
 
 export default Admin;

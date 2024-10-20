@@ -1,10 +1,56 @@
+.sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  height: 100%; /* Đảm bảo sidebar chiếm toàn bộ chiều cao */
+  position: relative;
+  z-index: 1;
+  border-right: 2px solid #ccc; /* Đường kẻ giữa sidebar và nội dung */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 16px;
+}
+
+.sidebar ul li a.active {
+  font-weight: bold;
+  color: #0056b3;
+}
+
+.sidebar ul li a:hover {
+  color: #0056b3;
+}
+
+/* CSS cho cấu trúc chung của ứng dụng */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: 'Times New Roman', Times, serif;
 }
-
+.App-body {
+  display: flex;
+  flex-direction: row;
+  height: calc(150vh - 150px); /* Đảm bảo chiều cao của body bằng chiều cao của màn hình trừ header và footer */
+}
+.App-main {
+  flex: 1;
+  padding: 20px;
+  position: relative;
+  background-color: transparent; /* Không màu nền */
+  z-index: 2;
+  min-height: 100%; /* Đảm bảo nội dung luôn chiếm đủ chiều cao */
+}
 .App {
   display: flex;
   flex-direction: column;
@@ -16,11 +62,6 @@ html, body {
   color: white;
   padding: 1rem;
   text-align: center;
-}
-
-.App-main {
-  flex: 1;
-  position: relative;
 }
 
 .App-background-image {
@@ -41,13 +82,10 @@ html, body {
   text-align: center;
 }
 
-.App-footer {
-  background-color: #282c34;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-.buttondn{
+
+
+/* Nút đăng nhập và các nút khác */
+.buttondn {
   background-color: #282c34;
   border: none;
   color: white;
@@ -59,7 +97,8 @@ html, body {
   margin: 4px 2px;
   cursor: pointer;
 }
-.buttongtotp{
+
+.buttongtotp {
   background-color: #282c34;
   border: none;
   color: white;
@@ -71,28 +110,25 @@ html, body {
   margin: 4px 2px;
   cursor: pointer;
 }
+
+.buttondn:hover, .buttongtotp:hover {
+  background-color: #61dafb;
+}
+
+/* Form và các thành phần của form */
+/* Đảm bảo khoảng cách đều giữa các phần tử và căn chỉnh đều cho input */
 .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 100vh;    Đặt chiều cao để căn giữa dọc */
 }
-
-
-
-/*DANG KY */
-
-
 
 .Register-form {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
-  padding: 1.5rem;
+  padding: 3rem;
   border-radius: 8px;
-  width: 320px;
-  margin: 2rem auto;
-  
-  /* Hiệu ứng nổi */
+  width: 400px; /* Đảm bảo tất cả các ô input có cùng kích thước */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
@@ -103,7 +139,7 @@ html, body {
 
 .Register-form h2 {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: #333;
 }
 
@@ -115,9 +151,9 @@ html, body {
 }
 
 .Register-form input {
-  width: 100%;
+  width: 100%; /* Đảm bảo tất cả input đều có cùng chiều rộng */
   padding: 0.7rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem; /* Tăng khoảng cách giữa các trường input */
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -133,11 +169,11 @@ html, body {
   background-color: #3498db;
   color: white;
   border: none;
-  padding: 0.6rem 1.2rem;
+  padding: 0.8rem 1.2rem;
   font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
-  width: 100%; /* Đảm bảo nút rộng bằng 100% */
+  width: 100%;
   text-align: center;
   transition: background-color 0.3s ease;
 }
@@ -146,39 +182,16 @@ html, body {
   background-color: #2980b9;
 }
 
-
-.buttondn:hover {
-  background-color: #61dafb;
-}
-.buttongtotp:hover {
-  background-color: #61dafb;
-}
-.dk{
-  color: blue;
-  font-weight: 500;
-
-}
-.cctk{
-  color: black;
-  font-weight: 500;
-  font-size: 200%;
- 
-}
-*, ::after, ::before {
-  box-sizing: border-box;
-}
+/* Định dạng cho form đăng nhập (DN) */
 .dn {
-  /* Căn giữa form */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px auto;
-/* 
-  margin: 0 auto; */
-  padding: 20px;
-  width: 300px;
-  background-color: #f4f4f4;
+  padding: 2.5rem;
   border-radius: 8px;
+  width: 400px; /* Tăng chiều rộng của form */
+  margin: 50px auto;
+  background-color: #f4f4f4;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
@@ -196,7 +209,6 @@ html, body {
   display: flex;
   flex-direction: column;
   color: #555;
- 
 }
 
 .dn input {
@@ -206,21 +218,19 @@ html, body {
   border: 1px solid #ccc;
   border-radius: 4px;
   transition: border-color 0.3s ease;
+  width: 100%; /* Đảm bảo input rộng 100% */
 }
 
 .dn input:focus {
   border-color: #3498db;
   outline: none;
-
 }
 
 .dn:hover {
-  /* Nổi lên thêm khi hover */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .dn input:hover {
-  /* Đổi màu khi hover vào input */
   border-color: #2980b9;
 }
 
@@ -240,55 +250,88 @@ html, body {
   background-color: #2980b9;
 }
 
-/* body {
-  background-color: #212121;
-  color: #fff;
-  /* font-family: monospace, serif; 
-  letter-spacing: 0.05em;
-  font-weight: 100;
-  font-size: 22px;
-} */
+/* Định dạng cho dòng "Quên mật khẩu" */
 
-h1 {
-  font-size: 23px;
-}
-
-.form {
-  width: 300px;
-  padding: 64px 15px 24px;
+/* Định dạng cho OTP Form */
+.Otp-form {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f3fc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
   margin: 0 auto;
 }
-.form .control {
-  margin: 0 0 24px;
-}
-.form .control input {
-  width: 100%;
-  padding: 14px 16px;
-  border: 0;
-  background: transparent;
-  color: #fff;
-  /* font-family: monospace, serif; */
-  letter-spacing: 0.05em;
-  font-size: 16px;
-}
-.form .control input:hover, .form .control input:focus {
-  outline: none;
-  border: 0;
-}
-.form .btn {
-  width: 100%;
-  display: block;
-  padding: 14px 16px;
-  background: transparent;
-  outline: none;
-  border: 0;
-  color: #fff;
-  letter-spacing: 0.1em;
+
+.Otp-form h2 {
+  text-align: center;
+  color: #4a4a4a;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
   font-weight: bold;
-  /* font-family: monospace; */
-  font-size: 16px;
 }
 
+.Otp-form label {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.Otp-form input {
+  padding: 12px;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Otp-form input:focus {
+  border-color: #7a5cfa;
+  box-shadow: 0 0 8px rgba(122, 92, 250, 0.3);
+}
+
+.Otp-form button {
+  padding: 12px;
+  background-color: #7a5cfa;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 12px;
+}
+
+.Otp-form button:hover {
+  background-color: #6a4be0;
+  box-shadow: 0 4px 10px rgba(106, 75, 224, 0.3);
+}
+
+.Otp-form button[disabled] {
+  background-color: #d9d9d9;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.Otp-form .resend-button {
+  background-color: transparent;
+  color: #7a5cfa;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  border: none;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.Otp-form .resend-button:hover {
+  color: #6a4be0;
+}
 
 /* CSS cho thông báo */
 .message-overlay {
@@ -346,131 +389,7 @@ h1 {
   background-color: #f8d7da;
 }
 
-
-
-.Otp-form {
-  display: flex;
-  flex-direction: column;
-  background-color: #f7f3fc; /* Màu nền dịu nhẹ, tinh tế */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
-  width: 100%;
-  max-width: 500px; 
-  margin: 0 auto;
-}
-
-.Otp-form h2 {
-  text-align: center;
-  color: #4a4a4a;
-  margin-bottom: 15px;
-  font-size: 1.8rem;
-  font-weight: bold; /* Tạo sự nổi bật cho tiêu đề */
-}
-
-.Otp-form label {
-  margin-bottom: 8px;
-  font-size: 1rem;
-  color: #333;
-  font-weight: 500;
-}
-
-.Otp-form input {
-  padding: 12px;
-  border: 1px solid #d1d1d1;
-  border-radius: 8px;
-  font-size: 15px;
-  margin-bottom: 20px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.Otp-form input:focus {
-  border-color: #7a5cfa; /* Màu tím nhạt khi focus */
-  box-shadow: 0 0 8px rgba(122, 92, 250, 0.3); /* Hiệu ứng sáng nhẹ khi focus */
-}
-
-.Otp-form button {
-  padding: 12px;
-  background-color: #7a5cfa; /* Màu tím pastel tinh tế */
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 12px;
-}
-
-.Otp-form button:hover {
-  background-color: #6a4be0; /* Hiệu ứng đổi màu khi hover */
-  box-shadow: 0 4px 10px rgba(106, 75, 224, 0.3); /* Hiệu ứng bóng đổ khi hover */
-}
-
-.Otp-form button[disabled] {
-  background-color: #d9d9d9;
-  cursor: not-allowed;
-  box-shadow: none;
-}
-
-.Otp-form .resend-button {
-  background-color: transparent;
-  color: #7a5cfa;
-  font-weight: bold;
-  text-decoration: underline;
-  cursor: pointer;
-  border: none;
-  padding: 10px 0;
-  transition: color 0.3s ease;
-}
-
-.Otp-form .resend-button:hover {
-  color: #6a4be0; /* Màu tối hơn khi hover */
-}
-
-
-/* CSS cho message */
-.message-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.message-box {
-  background: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  max-width: 280px; /* Khung thông báo nhỏ hơn */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bóng đổ mềm */
-}
-
-.message-box p {
-  color: #333;
-  margin-bottom: 15px;
-  font-size: 1rem;
-}
-
-.message-box button {
-  padding: 8px 15px;
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.message-box button:hover {
-  background-color: #218838;
-}
+/* Định dạng cho trường mật khẩu */
 .password-field {
   position: relative;
   width: 100%;
@@ -478,7 +397,7 @@ h1 {
 
 .password-input {
   width: 100%;
-  padding-right: 40px; /* Dành chỗ cho biểu tượng mắt */
+  padding-right: 40px;
 }
 
 .eye-icon {
@@ -490,7 +409,7 @@ h1 {
   padding-bottom: 15px;
 }
 
-.dn .eye-icon{
+.dn .eye-icon {
   position: absolute;
   right: 10px;
   top: 75%;
@@ -503,6 +422,8 @@ h1 {
   color: blue;
   text-decoration: underline;
   cursor: pointer;
-  margin-top: 10px;
-  margin-right: 140px;
+  text-align: left;
+  margin-top: -10px;
+  margin-right: 275px; 
+  margin-bottom: 20px; /* Khoảng cách giữa quên mật khẩu và nút đăng nhập */
 }
