@@ -117,8 +117,8 @@ import Sidebar from './view/Sidebar';
 import ManageVehicles from './view/ViewAdmin/ManageVehicles';
 import ManageUsers from './view/ViewAdmin/ManageUsers';
 import ApproveVehicles from './view/ViewAdmin/ApproveVehicles';
+import UserProfile from './view/ViewUser/UserProfile';
 import AddVehicle from './view/ViewUser/AddVehicle';
-import MyVehicles from './view/ViewUser/MyVehicles';
 import Infor from './view/Infor';
 import ParkingStatus from './view/ParkingStatus';
 import VehicleHistory from './view/VehicleHistory';
@@ -159,7 +159,7 @@ function App() {
   const shouldShowSidebar = () => {
     const sidebarPages = [
       '/dashboard', '/managevehicles', '/manageusers', '/approvevehicles',
-      '/parkingstatus', '/vehiclehistory', '/parkingmap', '/addvehicle', '/myvehicles'
+      '/parkingstatus', '/vehiclehistory', '/parkingmap', '/addvehicle', '/userprofile'
     ];
     return isAuthenticated && sidebarPages.includes(location.pathname);
   };
@@ -201,7 +201,7 @@ function App() {
 
             {/* Các route dành cho user */}
             <Route path="/addvehicle" element={<AddVehicle />} />
-            <Route path="/myvehicles" element={<MyVehicles />} />
+            <Route path="/userprofile" element={<UserProfile />} />
           </Routes>
         </main>
       </div>

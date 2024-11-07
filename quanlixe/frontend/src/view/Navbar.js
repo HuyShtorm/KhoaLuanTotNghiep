@@ -38,7 +38,7 @@ function Navbar({ isAuthenticated, handleHomeClick, handleUserOrAdminClick, setS
           <>
            {userRole === 'USER' && (
   <li className="navbar-item">
-    <Link to="/myvehicles" onClick={() => { handleUserOrAdminClick(); setShowSidebar(true); }}>Xe của tôi</Link>
+    <Link to="/userprofile" onClick={() => { handleUserOrAdminClick(); setShowSidebar(true); }}>Xe của tôi</Link>
   </li>
 )}
 {userRole === 'ADMIN' && (

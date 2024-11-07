@@ -131,6 +131,8 @@ html, body {
   width: 400px; /* Đảm bảo tất cả các ô input có cùng kích thước */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  margin: 50px auto;
+
 }
 
 .Register-form:hover {
@@ -426,4 +428,46 @@ html, body {
   margin-top: -10px;
   margin-right: 275px; 
   margin-bottom: 20px; /* Khoảng cách giữa quên mật khẩu và nút đăng nhập */
+}
+
+.profile-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.profile-item {
+  margin-bottom: 15px;
+}
+
+.profile-item label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.edit-button, .cancel-button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.cancel-button {
+  background-color: #f44336;
+  color: white;
+  margin-left: 10px;
+}
+
+.message {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
 }
