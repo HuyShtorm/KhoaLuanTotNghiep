@@ -1,23 +1,26 @@
 
 .footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    height: 250px;
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  width: 100%;
+  margin-top: auto; /* Đảm bảo footer luôn nằm dưới cùng */
+}
 
-    margin-top: auto;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
+.footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #444;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
   
   .footer-section {
     flex: 1;
@@ -91,13 +94,7 @@
   }
   
   
-  .footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #444;
-    background-color: #333;
-  }
-  
+ 
   .footer-bottom p {
     margin: 0;
     font-size: 14px;

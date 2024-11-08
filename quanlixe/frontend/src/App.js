@@ -120,7 +120,8 @@ import ApproveVehicles from './view/ViewAdmin/ApproveVehicles';
 import UserProfile from './view/ViewUser/UserProfile';
 import AddVehicle from './view/ViewUser/AddVehicle';
 import Infor from './view/Infor';
-import ParkingStatus from './view/ParkingStatus';
+import ParkingStatus from './view/ViewAdmin/ParkingStatus';
+import MyParkingStatus from './view/ViewUser/MyParkingStatus';
 import VehicleHistory from './view/VehicleHistory';
 import ParkingMap from './view/ParkingMap';
 
@@ -159,7 +160,7 @@ function App() {
   const shouldShowSidebar = () => {
     const sidebarPages = [
       '/dashboard', '/managevehicles', '/manageusers', '/approvevehicles',
-      '/parkingstatus', '/vehiclehistory', '/parkingmap', '/addvehicle', '/userprofile'
+      '/parkingstatus', '/vehiclehistory', '/parkingmap', '/addvehicle', '/userprofile', '/myparkingstatus',
     ];
     return isAuthenticated && sidebarPages.includes(location.pathname);
   };
@@ -190,16 +191,18 @@ function App() {
 
             {/* Các route liên quan đến dashboard và quản lý */}
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/parkingstatus" element={<ParkingStatus />} />
+           
             <Route path="/vehiclehistory" element={<VehicleHistory />} />
             <Route path="/parkingmap" element={<ParkingMap />} />
 
             {/* Các route dành cho admin */}
+            <Route path="/parkingstatus" element={<ParkingStatus />} />
             <Route path="/managevehicles" element={<ManageVehicles />} />
             <Route path="/manageusers" element={<ManageUsers />} />
             <Route path="/approvevehicles" element={<ApproveVehicles />} />
 
             {/* Các route dành cho user */}
+            <Route path="/myparkingstatus" element={<MyParkingStatus />} />
             <Route path="/addvehicle" element={<AddVehicle />} />
             <Route path="/userprofile" element={<UserProfile />} />
           </Routes>

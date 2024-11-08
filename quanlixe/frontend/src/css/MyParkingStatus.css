@@ -1,0 +1,43 @@
+.parking-status-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px;
+  
+   
+    width: 100%;
+    max-width: 1000px; /* Giới hạn chiều rộng tối đa */
+    margin: 20px auto;
+    height: auto; /* Chiều cao tự động theo nội dung */
+  }
+  
+  .parking-status-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .video-wrapper {
+    position: relative;
+   
+    width: 100%;
+    padding-bottom: 56.25%; /* Tỷ lệ khung hình 16:9 */
+   
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .parking-status-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5000px;
+    height: 5000px;
+    border: none;
+    transform: scale(0.5); /* Thu nhỏ video để hiển thị gọn */
+    transform-origin: top left ; /* Đảm bảo thu nhỏ từ góc trái trên */
+  
+  }
+  

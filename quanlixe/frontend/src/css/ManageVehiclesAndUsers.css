@@ -1,0 +1,50 @@
+.manage-container {
+    padding: 20px;
+  }
+  
+  .search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .user-item {
+    background: #f8f8f8;
+    margin: 10px 0;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .user-item:hover {
+    background: #e8e8e8;
+  }
+  
+  .user-details {
+    background: #f9f9f9;
+    padding: 10px;
+    margin-top: 10px;
+    border-left: 3px solid #007bff;
+  }
+  
+  .vehicle-list {
+    margin-top: 20px;
+  }
+  
+  .vehicle-list table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .vehicle-list th, .vehicle-list td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .vehicle-list img {
+    border-radius: 5px;
+  }
+  

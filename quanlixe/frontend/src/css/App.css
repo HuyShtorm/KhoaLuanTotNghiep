@@ -1,11 +1,14 @@
 .sidebar {
   width: 250px;
   background-color: #f4f4f4;
-  height: 100%; /* Đảm bảo sidebar chiếm toàn bộ chiều cao */
-  position: relative;
+  min-height: 100vh; /* Đảm bảo sidebar luôn chiếm chiều cao màn hình */
+  position: sticky;
+  top: 0; /* Sidebar cố định khi cuộn */
   z-index: 1;
-  border-right: 2px solid #ccc; /* Đường kẻ giữa sidebar và nội dung */
+  border-right: 2px solid #ccc;
+  padding-bottom: 20px; /* Đảm bảo không bị chồng footer */
 }
+
 
 .sidebar ul {
   list-style-type: none;
@@ -33,28 +36,29 @@
 
 /* CSS cho cấu trúc chung của ứng dụng */
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
   font-family: 'Times New Roman', Times, serif;
 }
-.App-body {
-  display: flex;
-  flex-direction: row;
-  height: calc(150vh - 150px); /* Đảm bảo chiều cao của body bằng chiều cao của màn hình trừ header và footer */
-}
-.App-main {
-  flex: 1;
-  padding: 20px;
-  position: relative;
-  background-color: transparent; /* Không màu nền */
-  z-index: 2;
-  min-height: 100%; /* Đảm bảo nội dung luôn chiếm đủ chiều cao */
-}
+
 .App {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh; /* Đảm bảo App chiếm toàn bộ chiều cao viewport */
+}
+
+.App-body {
+  display: flex;
+    flex-direction: row;
+    min-height: calc(100vh - 150px);
+  height: auto;
+}
+
+.App-main {
+  flex: 1; /* Đảm bảo nội dung chính luôn chiếm đầy khoảng trống */
+  padding: 20px;
+  overflow: auto; 
 }
 
 .App-header {
