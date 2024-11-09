@@ -124,7 +124,8 @@ import ParkingStatus from './view/ViewAdmin/ParkingStatus';
 import MyParkingStatus from './view/ViewUser/MyParkingStatus';
 import VehicleHistory from './view/VehicleHistory';
 import ParkingMap from './view/ParkingMap';
-
+import ServiceAdmin from './view/ViewAdmin/ServiceAdmin';
+import ServiceUser from './view/ViewUser/ServiceUser';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [role, setRole] = useState(null);
@@ -160,7 +161,7 @@ function App() {
   const shouldShowSidebar = () => {
     const sidebarPages = [
       '/dashboard', '/managevehicles', '/manageusers', '/approvevehicles',
-      '/parkingstatus', '/vehiclehistory', '/parkingmap', '/addvehicle', '/userprofile', '/myparkingstatus',
+      '/parkingstatus', '/vehiclehistory', '/parkingmap', '/addvehicle', '/userprofile', '/myparkingstatus','/adminservice','/userservice','/adminservice'
     ];
     return isAuthenticated && sidebarPages.includes(location.pathname);
   };
@@ -200,11 +201,12 @@ function App() {
             <Route path="/managevehicles" element={<ManageVehicles />} />
             <Route path="/manageusers" element={<ManageUsers />} />
             <Route path="/approvevehicles" element={<ApproveVehicles />} />
-
+            <Route path="/adminservice" element={<ServiceAdmin />} />
             {/* Các route dành cho user */}
             <Route path="/myparkingstatus" element={<MyParkingStatus />} />
             <Route path="/addvehicle" element={<AddVehicle />} />
             <Route path="/userprofile" element={<UserProfile />} />
+            <Route path="/userservice" element={<ServiceUser />} />
           </Routes>
         </main>
       </div>

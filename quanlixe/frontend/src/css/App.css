@@ -68,7 +68,7 @@ html, body {
   text-align: center;
 }
 
-.App-background-image {
+/* .App-background-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -85,6 +85,127 @@ html, body {
   padding: 1rem;
   text-align: center;
 }
+/* App.css */
+
+/* App.css */
+
+/* Dòng chữ nổi bật với gradient động và đổ bóng rõ hơn */
+.welcome-text {
+  font-size: 48px; /* Tăng kích thước chữ */
+  font-weight: bold;
+  margin-bottom: 80px; /* Tăng khoảng cách với hình ảnh */
+  background: linear-gradient(90deg, #ff7e00, #00bfff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientText 3s linear infinite, scaleUp 3s ease-in-out infinite;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Đổ bóng rõ hơn để tách khỏi nền */
+}
+
+/* Hiệu ứng gradient đổi màu liên tục */
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Hiệu ứng phóng to thu nhỏ chữ */
+@keyframes scaleUp {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Container cho hình ảnh */
+.animated-images {
+  display: flex;
+  justify-content: space-between; /* Đưa hình ảnh về sát hai bên */
+  gap: 20px;
+  margin-top: 50px; /* Hạ thấp hình ảnh */
+  padding: 0 50px; /* Căn chỉnh khoảng cách hình ảnh gần sát hai bên */
+  position: relative;
+  bottom: 30px; /* Dịch hình ảnh xuống gần footer */
+}
+
+/* Hình ảnh lớn hơn với hiệu ứng */
+.animated-images img {
+  width: 600px; /* Tăng kích thước chiều rộng */
+  height: 350px; /* Tăng kích thước chiều cao */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Đổ bóng rõ hơn cho hình ảnh */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: imageFloat 4s ease-in-out infinite, imageZoom 4s ease-in-out infinite;
+}
+
+.animated-images img:hover {
+  transform: scale(1.1); /* Phóng to hơn khi hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Tăng đổ bóng khi hover */
+}
+
+/* Hình ảnh di chuyển nhẹ lên xuống */
+@keyframes imageFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Hình ảnh phóng to thu nhỏ nhẹ nhàng */
+@keyframes imageZoom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Ảnh nền */
+.App-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  z-index: -1;
+  animation: zoomEffect 5s ease-in-out infinite;
+}
+
+@keyframes zoomEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Nội dung chính */
+.App-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+
 
 
 

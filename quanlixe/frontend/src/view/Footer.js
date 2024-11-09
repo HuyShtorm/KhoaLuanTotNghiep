@@ -42,7 +42,7 @@ function Footer({ isUserPage, isAdminPage }) {
                 </li>
                 <li>
                   <a href="https://www.facebook.com/cdanh.2002?locale=vi_VN" target="_blank" rel="noopener noreferrer" className="facebook-icon">
-                    <FaFacebook />
+                    <FaFacebook /> Nguyễn Công Danh
                   </a>
                 </li>
               </ul>

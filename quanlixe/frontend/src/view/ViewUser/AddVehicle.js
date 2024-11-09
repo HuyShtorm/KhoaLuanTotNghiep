@@ -18,6 +18,8 @@ const AddVehicle = () => {
   });
 
   const [vehicleList, setVehicleList] = useState([]);
+  const [loading, setLoading] = useState(false); // Trạng thái tải dữ liệu
+  const [error, setError] = useState(null); // Trạng thái lỗi
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -58,6 +60,22 @@ const AddVehicle = () => {
         },
       });
       alert('Thành công: Thông tin xe đã được gửi để duyệt!');
+      
+      // Reset form và hình ảnh xem trước
+      setFormData({
+        licensePlate: '',
+        type: 'MOTORBIKE',
+        frontImage: null,
+        sideImage: null,
+        rearImage: null,
+      });
+      setPreviewImages({
+        frontImage: null,
+        sideImage: null,
+        rearImage: null,
+      });
+
+      // Tải lại danh sách xe
       fetchVehicles();
     } catch (error) {
       console.error('Lỗi:', error);
@@ -66,6 +84,8 @@ const AddVehicle = () => {
   };
 
   const fetchVehicles = async () => {
+    setLoading(true);
+    setError(null);
     const token = localStorage.getItem('token');
     try {
       const response = await axios.get('/api/users/vehicles', {
@@ -75,7 +95,10 @@ const AddVehicle = () => {
       });
       setVehicleList(response.data);
     } catch (error) {
+      setError('Không thể tải danh sách xe, vui lòng thử lại.');
       console.error('Lỗi tải danh sách xe:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -89,14 +112,25 @@ const AddVehicle = () => {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Biển số xe:</label>
-          <input type="text" name="licensePlate" onChange={handleInputChange} placeholder="License Plate" required />
+          <input 
+            type="text" 
+            name="licensePlate" 
+            value={formData.licensePlate} 
+            onChange={handleInputChange} 
+            placeholder="Nhập biển số xe" 
+            required 
+          />
         </div>
         <div className="form-group">
           <label>Loại xe:</label>
-          <select name="type" onChange={handleInputChange}>
-            <option value="MOTORBIKE">Motorbike</option>
-            <option value="CAR">Car</option>
-            <option value="BICYCLE">Bicycle</option>
+          <select 
+            name="type" 
+            value={formData.type} 
+            onChange={handleInputChange}
+          >
+            <option value="MOTORBIKE">Xe Máy</option>
+            <option value="CAR">Ô Tô</option>
+            <option value="BICYCLE">Xe Đạp</option>
           </select>
         </div>
         <div className="image-upload">
@@ -109,7 +143,13 @@ const AddVehicle = () => {
                 <i className="fa fa-camera"></i>
               )}
             </label>
-            <input type="file" id="frontImage" name="frontImage" onChange={handleFileChange} required />
+            <input 
+              type="file" 
+              id="frontImage" 
+              name="frontImage" 
+              onChange={handleFileChange} 
+              required 
+            />
           </div>
         </div>
         <div className="image-upload">
@@ -122,7 +162,13 @@ const AddVehicle = () => {
                 <i className="fa fa-camera"></i>
               )}
             </label>
-            <input type="file" id="sideImage" name="sideImage" onChange={handleFileChange} required />
+            <input 
+              type="file" 
+              id="sideImage" 
+              name="sideImage" 
+              onChange={handleFileChange} 
+              required 
+            />
           </div>
         </div>
         <div className="image-upload">
@@ -135,30 +181,55 @@ const AddVehicle = () => {
                 <i className="fa fa-camera"></i>
               )}
             </label>
-            <input type="file" id="rearImage" name="rearImage" onChange={handleFileChange} required />
+            <input 
+              type="file" 
+              id="rearImage" 
+              name="rearImage" 
+              onChange={handleFileChange} 
+              required 
+            />
           </div>
         </div>
         <button className="submit-button" type="submit">Thêm Xe</button>
       </form>
 
       <h3>Danh Sách Xe</h3>
+      {loading && <p>Đang tải dữ liệu...</p>}
+      {error && <p>{error}</p>}
       <table>
         <thead>
           <tr>
             <th>Biển Số</th>
             <th>Loại Xe</th>
             <th>Trạng Thái</th>
+            <th>Ảnh Trước</th>
+            <th>Ảnh Ngang</th>
+            <th>Ảnh Sau</th>
           </tr>
         </thead>
         <tbody>
-          {vehicleList.map((vehicle) => (
-            <tr key={vehicle.id}>
-              <td>{vehicle.licensePlate}</td>
-              <td>{vehicle.type}</td>
-              <td>{vehicle.status}</td>
-            </tr>
-          ))}
-        </tbody>
+  {vehicleList.map((vehicle) => (
+    <tr key={vehicle.id}>
+      <td>{vehicle.licensePlate}</td>
+      <td>
+        {vehicle.type === "MOTORBIKE" ? "Xe máy" : 
+         vehicle.type === "CAR" ? "Ô tô" : "Xe đạp"}
+      </td>
+      <td>
+  {vehicle.status === "APPROVED" 
+    ? "Đã duyệt" 
+    : vehicle.status === "PENDING" 
+      ? "Đang chờ duyệt" 
+      : "Đã từ chối"}
+</td>
+
+      <td><img src={vehicle.frontImageUrl} alt="Ảnh trước" width="100" /></td>
+      <td><img src={vehicle.sideImageUrl} alt="Ảnh ngang" width="100" /></td>
+      <td><img src={vehicle.rearImageUrl} alt="Ảnh sau" width="100" /></td>
+    </tr>
+  ))}
+</tbody>
+
       </table>
     </div>
   );

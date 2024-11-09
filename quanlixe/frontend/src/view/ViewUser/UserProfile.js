@@ -154,7 +154,11 @@ const UserProfile = () => {
             {vehicles.map((vehicle) => (
               <tr key={vehicle.id}>
                 <td>{vehicle.licensePlate}</td>
-                <td>{vehicle.type}</td>
+                <td>
+        {vehicle.type === "MOTORBIKE" ? "Xe máy" : 
+         vehicle.type === "CAR" ? "Ô tô" : "Xe đạp"}
+      </td>
+      
                 <td>
                   <img
                     src={vehicle.frontImageUrl}

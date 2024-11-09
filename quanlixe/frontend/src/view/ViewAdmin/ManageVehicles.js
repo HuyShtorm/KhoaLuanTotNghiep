@@ -81,14 +81,38 @@ function ManageVehiclesAndUsers() {
     }
   };
 
+  // Handle delete user
+  const handleDeleteUser = async (userId) => {
+    const token = localStorage.getItem('token');
+    try {
+      if (window.confirm('Bạn có chắc chắn muốn xóa người dùng này?')) {
+        await axios.delete(`/api/admin/users/${userId}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setUsers(users.filter((user) => user.id !== userId));
+        if (selectedUser?.id === userId) {
+          setSelectedUser(null);
+          setVehicles([]);
+        }
+        alert('Người dùng đã được xóa.');
+      }
+    } catch (error) {
+      console.error('Error deleting user:', error);
+      alert('Lỗi khi xóa người dùng.');
+    }
+  };
+
   // Handle delete vehicle
   const handleDeleteVehicle = async (vehicleId) => {
     const token = localStorage.getItem('token');
     try {
-      await axios.delete(`/api/admin/vehicles/${vehicleId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      setVehicles(vehicles.filter((vehicle) => vehicle.id !== vehicleId));
+      if (window.confirm('Bạn có chắc chắn muốn xóa xe này?')) {
+        await axios.delete(`/api/admin/vehicles/${vehicleId}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setVehicles(vehicles.filter((vehicle) => vehicle.id !== vehicleId));
+        alert('Xe đã được xóa.');
+      }
     } catch (error) {
       console.error('Error deleting vehicle:', error);
     }
@@ -108,6 +132,7 @@ function ManageVehiclesAndUsers() {
       });
       setVehicles(vehicles.map((v) => (v.id === editVehicle.id ? editVehicle : v)));
       setEditVehicle(null);
+      alert('Cập nhật thông tin xe thành công!');
     } catch (error) {
       console.error('Error saving vehicle:', error);
     }
@@ -143,6 +168,7 @@ function ManageVehiclesAndUsers() {
                     <p><strong>Số Điện Thoại:</strong> <input type="text" value={editUser.phone} onChange={(e) => setEditUser({ ...editUser, phone: e.target.value })} /></p>
                     <button onClick={handleSaveUser}>Lưu</button>
                     <button onClick={() => setEditUser(null)}>Hủy</button>
+                    <button onClick={() => handleDeleteUser(user.id)}>Xóa Người Dùng</button>
                   </div>
                 ) : (
                   <div>

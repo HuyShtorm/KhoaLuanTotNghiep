@@ -74,7 +74,7 @@ const ApproveVehicles = () => {
             <th>Ảnh trước</th>
             <th>Ảnh ngang</th>
             <th>Ảnh sau</th>
-            <th>Khách hàng</th>
+            <th>Người dùng</th>
             <th>Email</th>
             <th>Thao tác</th>
           </tr>
