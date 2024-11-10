@@ -14,7 +14,7 @@ const Sidebar = ({ role }) => {
 
         {role === 'ADMIN' && (
           <>
-           <li><NavLink to="/adminservice" className={({ isActive }) => isActive ? "active" : ""}>Dịch Vụ Bãi Đỗ</NavLink></li>
+           <li><NavLink to="/parkingadminservice" className={({ isActive }) => isActive ? "active" : ""}>Dịch Vụ Bãi Đỗ</NavLink></li>
            <li><NavLink to="/parkingstatus" className={({ isActive }) => isActive ? "active" : ""}>Trạng Thái Bãi Xe</NavLink></li>
             <li><NavLink to="/managevehicles" className={({ isActive }) => isActive ? "active" : ""}>Quản Lý Xe và Người Dùng </NavLink></li>
             {/* <li><NavLink to="/manageusers" className={({ isActive }) => isActive ? "active" : ""}>Quản Lý Người Dùng</NavLink></li> */}
@@ -24,7 +24,7 @@ const Sidebar = ({ role }) => {
 
         {role === 'USER' && (
           <> 
-          <li><NavLink to="/userservice" className={({ isActive }) => isActive ? "active" : ""}>Dịch Vụ Đăng Ký Bãi Đỗ</NavLink></li>
+          <li><NavLink to="/parkinguserservice" className={({ isActive }) => isActive ? "active" : ""}>Dịch Vụ Đăng Ký Bãi Đỗ</NavLink></li>
           <li><NavLink to="/myparkingstatus" className={({ isActive }) => isActive ? "active" : ""}>Trạng Thái Bãi Xe Của Tôi</NavLink></li>
             <li><NavLink to="/addvehicle" className={({ isActive }) => isActive ? "active" : ""}>Thêm Thông Tin Xe</NavLink></li>
             <li><NavLink to="/userprofile" className={({ isActive }) => isActive ? "active" : ""}>Thông tin của Tôi</NavLink></li>
