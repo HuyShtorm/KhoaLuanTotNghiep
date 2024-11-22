@@ -33,7 +33,9 @@ function Navbar({ isAuthenticated, handleHomeClick, handleUserOrAdminClick, setS
         <li className="navbar-item">
         <Link to="/infor" onClick={() => { handleHomeClick(); setShowSidebar(false); }}>Thông tin Giới thiệu</Link>
         </li>
-
+        <li className="navbar-item">
+        <Link to="/map" onClick={() => { handleHomeClick(); setShowSidebar(false); }}>Sơ Đồ Chung Cư và Bãi Đỗ</Link>
+        </li>
         {isAuthenticated ? (
           <>
            {userRole === 'USER' && (

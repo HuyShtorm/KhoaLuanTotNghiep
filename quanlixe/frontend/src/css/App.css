@@ -246,17 +246,20 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  
 }
 
 .Register-form {
+  
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   padding: 3rem;
   border-radius: 8px;
-  width: 400px; /* Đảm bảo tất cả các ô input có cùng kích thước */
+  width: 400px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  margin: 50px auto;
+
 
 }
 

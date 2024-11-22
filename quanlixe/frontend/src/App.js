@@ -18,10 +18,14 @@ import AddVehicle from './view/ViewUser/AddVehicle';
 import Infor from './view/Infor';
 import ParkingStatus from './view/ViewAdmin/ParkingStatus';
 import MyParkingStatus from './view/ViewUser/MyParkingStatus';
-import VehicleHistory from './view/VehicleHistory';
+import VehicleHistory from './view/ViewAdmin/VehicleHistory';
+import MyVehicleHistory from './view/ViewUser/MyVehicleHistory';
 import ParkingMap from './view/ParkingMap';
 import ParkingServiceAdmin from './view/ViewAdmin/ParkingServiceAdmin';
 import ParkingServiceUser from './view/ViewUser/ParkingServiceUser';
+import ViewMap from './view/ViewMap';
+import Invoice from './view/ViewAdmin/Invoice';
+import MyInvoice from './view/ViewUser/MyInvoice';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [role, setRole] = useState(null);
@@ -57,13 +61,13 @@ function App() {
   const shouldShowSidebar = () => {
     const sidebarPages = [
       '/dashboard', '/managevehicles', '/manageusers', '/approvevehicles',
-      '/parkingstatus', '/vehiclehistory', '/parkingmap', '/addvehicle', '/userprofile', '/myparkingstatus','/adminservice','/parkinguserservice','/parkingadminservice'
+      '/parkingstatus', '/vehiclehistory', '/myvehiclehistory','/parkingmap', '/addvehicle', '/userprofile', '/myparkingstatus','/adminservice','/invoice','/myinvoice','/parkinguserservice','/parkingadminservice'
     ];
     return isAuthenticated && sidebarPages.includes(location.pathname);
   };
 
   const shouldShowBackground = () => {
-    return location.pathname === '/' || location.pathname === '/infor'|| location.pathname === '/login'|| location.pathname === '/register';
+    return location.pathname === '/' || location.pathname === '/infor'|| location.pathname === '/map'|| location.pathname === '/login'|| location.pathname === '/register';
   };
 
   return (
@@ -85,11 +89,11 @@ function App() {
             <Route path="/infor" element={<Infor handleHomeClick={handleHomeClick} />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/login" element={<LoginForm setIsAuthenticated={setIsAuthenticated} />} />
-
+            <Route path="/map" element={<ViewMap handleHomeClick={handleHomeClick}/>} />  
             {/* Các route liên quan đến dashboard và quản lý */}
             <Route path="/dashboard" element={<Dashboard />} />
            
-            <Route path="/vehiclehistory" element={<VehicleHistory />} />
+     
             <Route path="/parkingmap" element={<ParkingMap />} />
 
             {/* Các route dành cho admin */}
@@ -97,11 +101,15 @@ function App() {
             <Route path="/managevehicles" element={<ManageVehicles />} />
             <Route path="/manageusers" element={<ManageUsers />} />
             <Route path="/approvevehicles" element={<ApproveVehicles />} />
+            <Route path="/vehiclehistory" element={<VehicleHistory />} />
             <Route path="/parkingadminservice" element={<ParkingServiceAdmin />} />
+            <Route path="/invoice" element={<Invoice />} />
             {/* Các route dành cho user */}
             <Route path="/myparkingstatus" element={<MyParkingStatus />} />
             <Route path="/addvehicle" element={<AddVehicle />} />
             <Route path="/userprofile" element={<UserProfile />} />
+            <Route path="/myvehiclehistory" element={<MyVehicleHistory />} />
+            <Route path="/myinvoice" element={<MyInvoice />} />
             <Route path="/parkinguserservice" element={<ParkingServiceUser />} />
           </Routes>
         </main>

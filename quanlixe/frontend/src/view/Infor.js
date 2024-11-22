@@ -29,6 +29,7 @@ const Infor = () => {
           <div className="image-caption">Quản lý thông minh</div>
         </div>
       </div>
+      
     </div>
   );
 };
