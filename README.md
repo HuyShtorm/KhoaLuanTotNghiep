@@ -2,6 +2,8 @@
 
 This project is built with ReactJS, SpringBoot, and AWS.
 
+"This project is a webapp with basic CRUD functionality and AWS connectivity. It utilizes AWS services such as EC2, S3, and RDS. However, it has limitations as it does not yet integrate AI or real payment processing."
+
 The BackEnd directory contains the backend files, implemented using SpringBoot.
 The FrontEnd directory contains the frontend files, implemented using ReactJS.
 
