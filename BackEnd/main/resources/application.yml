@@ -1,0 +1,67 @@
+spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/postgres
+#    username: postgres
+#    password: 
+#    driver-class-name: org.postgresql.Driver
+#    ddl-auto: update
+#
+#  jpa:
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    hibernate:
+#      format_sql: true
+#      show_sql: true
+#    properties:
+#      hibernate:
+#        ddl-auto: update  # Có thể thay đổi thành "validate" hoặc "none" khi chạy trong môi trường sản xuất
+  datasource:
+    url: jdbc:postgresql://quanlixe.cl0os4s2ezr3.ap-southeast-1.rds.amazonaws.com/quanlixe
+    username: postgres
+    password: 
+    driver-class-name: org.postgresql.Driver
+    jpa:
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      hibernate:
+        format_sql: true
+        show_sql: true
+      properties:
+        hibernate:
+          ddl-auto: update
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username:  # Thay thế bằng email Gmail thực tế của bạn
+    password:  # Thay thế bằng mật khẩu ứng dụng Gmail của bạn
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
+jwt:
+  secret:   # Thay thế bằng secret key thực tế của bạn
+  expiration: 3600000 #1 tiếng
+  refreshExpirationMs: 604800000
+cloud:
+  aws:
+    credentials:
+      access-key: 
+      secret-key: 
+    region:
+      static: ap-southeast-1
+    s3:
+      bucket-name: themxe
+
+openai:
+  api:
+    key: 
+#cors:
+#  allowedOrigin:  '*'
+#  allowedMethods: '*'
+#  exposedHeaders: '*'
+#  allowCredentials: false
+#  corsConfiguration:  '/*'
