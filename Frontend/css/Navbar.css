@@ -1,0 +1,100 @@
+.navbar {
+   width: 100;
+    padding: 10px;
+    display: flex;
+    align-items: center; 
+    
+  }
+  
+  .navbar-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Tạo hình tròn */
+    margin-right: 100px; /* Tạo khoảng cách giữa logo và các liên kết */
+  }
+  .navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Đẩy các liên kết sang bên phải */
+    flex-grow: 1; /* Đẩy các liên kết sang bên phải */
+  }
+  
+  .navbar-item {
+    margin-left: 20px;
+    display: flex;
+  }
+  
+  .navbar-item a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+  }
+  
+  .navbar-item a:hover {
+    background-color: #555;
+    border-radius: 4px;
+  }
+  .td{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 500px ;
+  font-size: 25px;
+  overflow: hidden;
+  text-shadow: 5px 5px 5px  #000;
+  }
+  /* Nút hamburger hiển thị trên điện thoại */
+.navbar-toggle {
+  display: none; /* Mặc định ẩn */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Hiển thị menu dọc khi mở trên điện thoại */
+.navbar-list.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px; /* Đặt ngay dưới navbar */
+  left: 0;
+  width: 100%;
+  background-color: #333; /* Đặt màu nền cho menu */
+  padding: 10px 0;
+  z-index: 999; /* Đảm bảo menu luôn nằm trên */
+}
+
+/* Căn chỉnh mục menu trên điện thoại */
+.navbar-item {
+  margin: 10px 0; /* Tạo khoảng cách giữa các mục menu */
+  text-align: center;
+}
+
+.navbar-item a {
+  display: block; /* Đảm bảo vùng nhấn bao trọn */
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.navbar-item a:hover {
+  background-color: #555;
+  border-radius: 4px; /* Làm đẹp khi hover */
+}
+
+/* Chỉ áp dụng cho màn hình nhỏ */
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block; /* Hiển thị nút hamburger */
+  }
+
+  .navbar-list {
+    display: none; /* Ẩn menu mặc định */
+  }
+}

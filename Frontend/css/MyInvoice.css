@@ -1,0 +1,256 @@
+.invoice-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.invoice-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.invoice-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f0f8ff;
+  border-radius: 8px;
+  border: 1px solid #cce7ff;
+}
+
+.invoice-item:nth-child(even) {
+  background-color: #e6f7ff;
+}
+
+.invoice-item input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 10px;
+}
+
+.invoice-item p {
+  margin: 5px 0;
+}
+
+.invoice-total {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+
+.payment-methods button {
+  margin-right: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.payment-methods button:nth-child(1) {
+  background-color: #ff5f5f;
+}
+
+.payment-methods button:nth-child(2) {
+  background-color: #007bff;
+}
+
+.payment-methods button:nth-child(3) {
+  background-color: #28a745;
+}
+.payment-logo {
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.payment-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  text-align: center;
+}
+
+.qr-code {
+  width: 200px;
+  height: auto;
+  margin: 20px 0;
+}
+
+.close-modal-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.confirm-payment-btn {
+  background: green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.invoice-container {
+  padding: 20px;
+}
+
+.payment-methods {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.payment-logo {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.payment-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.qr-code {
+  width: 150px;
+  height: 150px;
+  margin: 20px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input {
+  padding: 5px;
+  font-size: 16px;
+}
+
+form button {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.close-modal-btn,
+.confirm-payment-btn {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.invoice-section-header {
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.paid-services-section {
+  margin-top: 50px;
+}
+
+.paid-service {
+  background-color: #d4edda;
+  border-left: 4px solid #28a745;
+}
+.profile-avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.info-item {
+  margin-bottom: 15px;
+}
+
+.password-container {
+  display: flex;
+  align-items: center;
+}
+
+.password-container button {
+  margin-left: 10px;
+  padding: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.password-container button:hover {
+  background-color: #0056b3;
+}
+@media only screen and (max-width: 600px) {
+  body {
+      font-size: 14px;
+      margin: 0;
+      padding: 0;
+  }
+
+  .container {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .footer {
+      text-align: center;
+      font-size: 12px;
+  }
+
+  .button {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+  }
+}

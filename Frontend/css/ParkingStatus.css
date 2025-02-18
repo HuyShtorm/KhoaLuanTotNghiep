@@ -1,0 +1,91 @@
+.parking-status-container {
+  width: 100%;
+  max-width: 1000px; 
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.parking-status-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.zone-section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.zone-section h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.floor-section {
+  margin-bottom: 20px;
+}
+
+.floor-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.video-wrapper {
+  
+ width: 100%;
+  margin: 0 auto;
+  background-color: #eaeaea;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.parking-status-video {
+
+
+  width: 2000px; /* Chiều rộng gốc của video */
+  height: 500px; /* Chiều cao gốc của video */
+  border: none;
+  /* transform: scale(0.5);  */
+  transform-origin: top left; 
+}
+
+.camera-title {
+  font-size: 16px;
+  margin-top: 10px;
+  color: #333;
+  text-align: center;
+}@media only screen and (max-width: 600px) {
+  body {
+      font-size: 14px;
+      margin: 0;
+      padding: 0;
+  }
+
+  .container {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .footer {
+      text-align: center;
+      font-size: 12px;
+  }
+
+  .button {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+  }
+}

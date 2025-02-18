@@ -1,0 +1,160 @@
+/* App.css */
+
+/* Hiệu ứng làm mờ nền và nội dung chính */
+.infor-container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.8;
+    color: #f5f5f5;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Làm mờ nền */
+    border-radius: 10px;
+    animation: fadeInContainer 2s ease-in-out forwards;
+  }
+  
+  /* Hiệu ứng xuất hiện từ từ */
+  @keyframes fadeInContainer {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .infor-header {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #00d4ff;
+    text-shadow: 2px 2px 4px #000;
+    animation: fadeInText 1.5s ease-in-out forwards;
+  }
+  
+  /* Hiệu ứng chữ tiêu đề đổi màu liên tục */
+  @keyframes fadeInText {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .infor-header {
+    animation: gradientHeader 5s linear infinite;
+    background: linear-gradient(90deg, #00d4ff, #ff007b);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Hiệu ứng đổi màu gradient cho tiêu đề */
+  @keyframes gradientHeader {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .infor-description {
+    font-size: 30px;
+    margin-bottom: 30px;
+    animation: fadeInDescription 2s ease-in-out forwards;
+  }
+  
+  /* Hiệu ứng cho phần mô tả */
+  @keyframes fadeInDescription {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .image-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .image-item {
+    flex: 1;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    animation: fadeInImages 2s ease-in-out forwards;
+  }
+  
+  /* Hiệu ứng cho hình ảnh */
+  .image-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: zoomInImage 4s ease-in-out infinite alternate;
+  }
+  
+  @keyframes zoomInImage {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.05);
+    }
+  }
+  
+  .image-item:hover img {
+    transform: scale(1.1); /* Phóng to hơn khi hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .image-caption {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ddd;
+    text-shadow: 1px 1px 2px #000;
+  }
+  @media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .button {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
